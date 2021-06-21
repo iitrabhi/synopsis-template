@@ -1,0 +1,38 @@
+\documentclass[11pt, english, onehalfspacing, headsepline,oneside]{MastersDoctoralThesis}
+\input{00.Preamble/preamble}
+\input{00.Preamble/thesis-info}
+\input{00.Preamble/custom_commands}
+\begin{document}
+	\newgeometry{left=3.0cm,right=3.0cm,top=3.0cm,bottom=3.0cm}
+% --------------------------------------------------------------
+% THESIS CONTENT - Front Matter --------------------------------
+% --------------------------------------------------------------
+	\pagestyle{plain} % Default to the plain heading style until the thesis style is called
+	\include{01.Cover/coverpage-new}
+	\mainmatter % Begin numeric (1,2,3...) page numbering
+	\include{04.Abstract/abstract}
+% --------------------------------------------------------------
+% THESIS CONTENT - Chapters ------------------------------------
+% --------------------------------------------------------------
+	\begingroup
+	\let\cleardoublepage\relax
+	\let\clearpage\relax
+		\include{07.Chapters/Chapter1/Chapter1}
+		\include{07.Chapters/Chapter2/Chapter2}
+		\include{07.Chapters/Chapter3/Chapter3}
+		\include{07.Chapters/Chapter4/Chapter4}
+		\include{07.Chapters/Chapter5/Chapter5}
+		\include{07.Chapters/Chapter6/Chapter6}
+	\endgroup
+% --------------------------------------------------------------
+% THESIS CONTENT - Lists and Publications ----------------------
+% --------------------------------------------------------------
+	\pagestyle{plain}
+	\input{09.Lists/publications}
+% --------------------------------------------------------------
+% THESIS CONTENT - Bibliography --------------------------------
+% --------------------------------------------------------------
+	\renewcommand{\bibsection}{\chapter*{\bibname}}
+	\bibliographystyle{plainnat}
+	\bibliography{10.References/main}
+\end{document}
